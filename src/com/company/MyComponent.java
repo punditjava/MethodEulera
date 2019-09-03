@@ -8,13 +8,13 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 
-public class MyComponent extends JFrame
+class MyComponent extends JFrame
 {
     private boolean flag = false;
     private double y;
     private double x;
     private String formula;
-    public MyComponent()
+    MyComponent()
     {
         JPanel panel = new JPanel();
         JButton button = new JButton("Paint");
@@ -112,7 +112,7 @@ public class MyComponent extends JFrame
             }
         }
 
-        public String Transfer(String formula)
+        String Transfer(String formula)
         {
             char[] a = formula.toCharArray();
             String[] stringa = new String[a.length];
@@ -131,16 +131,15 @@ public class MyComponent extends JFrame
                         break;
                 }
             }
-            String s = join(stringa);
-            return s;
+            return join(stringa);
         }
 
         private String join(String[] strings)
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < strings.length; i++)
+            for (String string : strings)
             {
-                sb.append(strings[i]);
+                sb.append(string);
             }
             return sb.toString();
         }
