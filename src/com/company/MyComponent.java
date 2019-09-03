@@ -96,7 +96,7 @@ public class MyComponent extends JFrame
                 {
                     for (int i = 0; i < n; i++)
                     {
-                        Object result = engine.eval(Ahyet(formula));
+                        Object result = engine.eval(Transfer(formula));
                         double x1 = x;
                         double y1 = y;
                         y += h * (double) result;
@@ -112,26 +112,26 @@ public class MyComponent extends JFrame
             }
         }
 
-        public String Ahyet(String formula)
+        public String Transfer(String formula)
         {
             char[] a = formula.toCharArray();
-            String[] sosi = new String[a.length];
+            String[] stringa = new String[a.length];
             for (int i = 0; i < a.length; i++)
             {
                 switch (a[i])
                 {
                     case 'x':
-                        sosi[i] = String.valueOf(x);
+                        stringa[i] = String.valueOf(x);
                         break;
                     case 'y':
-                        sosi[i] = String.valueOf(y);
+                        stringa[i] = String.valueOf(y);
                         break;
                     default:
-                        sosi[i] = String.copyValueOf(new char[]{a[i]});
+                        stringa[i] = String.copyValueOf(new char[]{a[i]});
                         break;
                 }
             }
-            String s = join(sosi);
+            String s = join(stringa);
             return s;
         }
 
